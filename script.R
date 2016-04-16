@@ -59,7 +59,7 @@ dev.off()
 p2 <- ggplot(data, aes(interaction(K,N,S), nod, colour=factor(N), fill=factor(K))) +
   geom_bar(stat = "identity",position = position_dodge())+
   geom_errorbar(aes(ymax=nod + nodsd, ymin=nod - nodsd), width = 0.2, size = 1)+
-  annotate("text", x = 1:16, y = -0.1, label = c("A",rep("B",9),"C", rep("NI",5)))+
+  annotate("text", x = 1:16, y = -0.4, label = c("A",rep("B",9),"C", rep("NI",5)))+
   xlab("Concentrations de KNO3 et de NaCl\n(KNO3.NaCl.Souche)") +
   ylab("Nombre moyen de nodules")+
   labs(title="Représentation du nombre moyen de nodules en fonction\nde la souche inoculée, du KNO3 et du NaCl à 8 DPI") +
