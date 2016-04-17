@@ -44,7 +44,7 @@ p <- ggplot(data, aes(interaction(K,N,S), moy, colour=factor(N), fill=factor(K))
   geom_errorbar(aes(ymax=moy + sd, ymin=moy - sd), width = 0.2, size = 1)+
   annotate("text", x = 1:16, y = -0.1, label = c("A",rep("B",9),"C", rep("NI",5)))+
   xlab("Concentrations de KNO3 et de NaCl") +
-  ylab("Moyenne de la taille des hypocotyles")+
+  ylab("Moyenne de la taille des hypocotyles (cm)")+
   labs(title="Représentation de la taille des hypocotyles en fonction\nde la souche inoculée, du KNO3 et du NaCl à 8 DPI") +
   guides(fill = guide_legend(title="KNO3 (mM)"), color = guide_legend(title="NaCl (mM)"))+
   theme(axis.ticks = element_blank(), axis.text.x = element_blank())+
