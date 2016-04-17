@@ -104,7 +104,22 @@ p4 <- ggplot(data, aes(interaction(K,N,S), fixm, colour=factor(N), fill=factor(K
   print(p4)
   dev.off()
 
-print(data)
+
+p5 <- ggplot(data, aes(interaction(K,N,S), fixp/nod, colour=factor(N), fill=factor(K))) +
+  geom_bar(stat = "identity",position = position_dodge())+
+  # geom_errorbar(aes(ymax=nod + nodsd, ymin=nod - nodsd), width = 0.2, size = 1)+
+  # annotate("text", x = 1:16, y = -0.1, label = c("A",rep("B",9),"C", rep("NI",5)))+
+  xlab("Concentrations de KNO3 et de NaCl\n(KNO3.NaCl.Souche)") +
+  ylab("Rapport du nombre moyen de nodosités fixatrices sur le nombre de nodosités")+
+  labs(title="Représentation du rapport du nombre moyen de nodules fix+ sur le nombre total de nodosités\nen fonction de la souche inoculée, du KNO3 et du NaCl à 8 DPI") +
+  guides(fill = guide_legend(title="KNO3 (mM)"), color = guide_legend(title="NaCl (mM)"))+
+  # theme(axis.ticks = element_blank(), axis.text.x = element_blank())+
+  scale_fill_hue(l=40, c=30)
+
+  pdf(file="rapfix+nod8.pdf", width=10)
+  print(p5)
+  dev.off()
+
 
 rm(list=ls())
 
@@ -215,4 +230,20 @@ p4 <- ggplot(data, aes(interaction(K,N,S), fixm, colour=factor(N), fill=factor(K
 
   pdf(file="nod-mean14.pdf", width=10)
   print(p4)
+  dev.off()
+
+
+p5 <- ggplot(data, aes(interaction(K,N,S), fixp/nod, colour=factor(N), fill=factor(K))) +
+  geom_bar(stat = "identity",position = position_dodge())+
+  # geom_errorbar(aes(ymax=nod + nodsd, ymin=nod - nodsd), width = 0.2, size = 1)+
+  # annotate("text", x = 1:16, y = -0.1, label = c("A",rep("B",9),"C", rep("NI",5)))+
+  xlab("Concentrations de KNO3 et de NaCl\n(KNO3.NaCl.Souche)") +
+  ylab("Rapport du nombre moyen de nodosités fixatrices sur le nombre de nodosités")+
+  labs(title="Représentation du rapport du nombre moyen de nodules fix+ sur le nombre total de nodosités\nen fonction de la souche inoculée, du KNO3 et du NaCl à 14 DPI") +
+  guides(fill = guide_legend(title="KNO3 (mM)"), color = guide_legend(title="NaCl (mM)"))+
+  # theme(axis.ticks = element_blank(), axis.text.x = element_blank())+
+  scale_fill_hue(l=40, c=30)
+
+  pdf(file="rapfix+nod14.pdf", width=10)
+  print(p5)
   dev.off()
