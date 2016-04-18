@@ -115,7 +115,7 @@ p5 <- ggplot(data, aes(interaction(K,N,S), (fixp/round(nod,0))*100, colour=facto
   # geom_errorbar(aes(ymax=nod + nodsd, ymin=nod - nodsd), width = 0.2, size = 1)+
   # annotate("text", x = 1:16, y = -0.1, label = c("A",rep("B",9),"C", rep("NI",5)))+
   xlab("Concentrations de KNO3 et de NaCl\n(KNO3.NaCl.Souche)") +
-  ylab("Rapport du nombre moyen de nodosités fixatrices sur le nombre de nodosités")+
+  ylab("Pourcentage de nodosités fixatrices")+
   labs(title="Représentation du pourcentage de nodules fix+ en fonction\nde la souche inoculée, du KNO3 et du NaCl à 8 DPI") +
   guides(fill = guide_legend(title="KNO3 (mM)"), color = guide_legend(title="NaCl (mM)"))+
   # theme(axis.ticks = element_blank(), axis.text.x = element_blank())+
@@ -247,7 +247,7 @@ p5 <- ggplot(data, aes(interaction(K,N,S), (fixp/round(nod))*100, colour=factor(
   # geom_errorbar(aes(ymax=nod + nodsd, ymin=nod - nodsd), width = 0.2, size = 1)+
   # annotate("text", x = 1:16, y = -0.1, label = c("A",rep("B",9),"C", rep("NI",5)))+
   xlab("Concentrations de KNO3 et de NaCl\n(KNO3.NaCl.Souche)") +
-  ylab("Rapport du nombre moyen de nodosités fixatrices sur le nombre de nodosités")+
+  ylab("Pourcentage de nodosités fixatrices")+
   labs(title="Représentation du pourcentage de nodules fix+ en fonction\nde la souche inoculée, du KNO3 et du NaCl à 14 DPI") +
   guides(fill = guide_legend(title="KNO3 (mM)"), color = guide_legend(title="NaCl (mM)"))+
   # theme(axis.ticks = element_blank(), axis.text.x = element_blank())+
